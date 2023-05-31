@@ -1,0 +1,79 @@
+def handle_amounts(df, column_name, precision, scale):
+    diff = precision - scale
+    df = df.withColumn(column_name, concat(substring(column_name, 1, diff), lit('.'),
+                                           substring(column_name, diff + 1, precision)))
+
+    df = df.withColumn(column_name,
+                       when(
+                           col(column_name).endswith('p'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'p', '0')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('q'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'q', '1')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('r'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'r', '2')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('s'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 's', '3')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('t'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 't', '4')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('u'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'u', '5')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('v'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'v', '6')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('w'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'w', '7')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('x'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'x', '8')
+                           )
+                       )
+                       .when(
+                           col(column_name).endswith('y'),
+                           concat(
+                               lit('-'),
+                               regexp_replace(col(column_name), 'y', '9')
+                           )
+                       )
+                       )
+
+    return df
