@@ -839,6 +839,7 @@ source_processing_date DATE ,
 source_system VARCHAR2(80) ,
 underlying_source_system VARCHAR2(80) ,
 admin_system VARCHAR2(10) ,
+record_Keeping_group_ind  VARCHAR2(20 BYTE) ,
 CONSTRAINT PK_PLAN PRIMARY KEY 
 (
   PLAN_NUMBER 
@@ -1026,6 +1027,7 @@ source_processing_date DATE ,
 source_system VARCHAR2(80) ,
 underlying_source_system VARCHAR2(80) ,
 admin_system VARCHAR2(10) ,
+record_Keeping_group_ind  VARCHAR2(20 BYTE) ,
 DELTA_OP_IND varchar2(1)
 )
 TABLESPACE NEWR_REPOS_DATA
