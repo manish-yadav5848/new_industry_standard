@@ -839,6 +839,7 @@ source_cycle_date DATE ,
 source_processing_date DATE ,
 source_system VARCHAR2(80) ,
 underlying_source_system VARCHAR2(80) ,
+record_Keeping_group_ind  VARCHAR2(20 BYTE) ,
 admin_system VARCHAR2(10) ,
 CONSTRAINT PK_PLAN PRIMARY KEY 
 (
