@@ -204,3 +204,8 @@ TABLESPACE NEWR_REPOS_DATA;
 --- GRANT PARTICIPANT_BALANCE_quarterly_delta
 GRANT SELECT ON NEWR_REPOSB.PARTICIPANT_BALANCE_quarterly_delta TO role_newr_repos_read;
 GRANT INSERT, UPDATE, DELETE ON NEWR_REPOSB.PARTICIPANT_BALANCE_quarterly_delta TO role_newr_repos_write;
+
+
+grant  SELECT on NEWR_REPOSB.PARTICIPANT_BALANCE_quarterly to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.PARTICIPANT_BALANCE_monthly to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.participant_balance to WEALTH_CENTRAL with  grant  option;
