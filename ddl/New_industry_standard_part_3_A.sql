@@ -1543,8 +1543,8 @@ CREATE TABLE NEWR_REPOS.PARTICIPANT_MIN_DISTRIBUTIONS_DELTA
 TABLESPACE NEWR_REPOS_DATA
 ;
 
-GRANT SELECT ON NEWR_REPOS. participant_min_distributions_delta TO role_newr_repos_read;
-GRANT INSERT, UPDATE, DELETE ON NEWR_REPOS. participant_min_distributions_delta TO role_newr_repos_write;
+GRANT SELECT ON NEWR_REPOS.participant_min_distributions_delta TO role_newr_repos_read;
+GRANT INSERT, UPDATE, DELETE ON NEWR_REPOS.participant_min_distributions_delta TO role_newr_repos_write;
 
 
 GRANT  SELECT ON NEWR_REPOS.participant_min_distributions TO WEALTH_CENTRAL WITH GRANT OPTION;
