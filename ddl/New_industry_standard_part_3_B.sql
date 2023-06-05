@@ -1,10 +1,10 @@
  
 drop table NEWR_REPOSB.PARTICIPANT_BALANCE;
 drop table NEWR_REPOSB.PARTICIPANT_BALANCE_delta;
-drop table NEWR_REPOSB.PARTICIPANT_BALANCE_monthly;
-drop table NEWR_REPOSB.PARTICIPANT_BALANCE_monthly_delta;
-drop table NEWR_REPOSB.PARTICIPANT_BALANCE_quarterly;
-drop table NEWR_REPOSB.PARTICIPANT_BALANCE_quarterly_delta;
+drop table NEWR_REPOSB.PART_BALANCE_monthly;
+drop table NEWR_REPOSB.PART_BALANCE_monthly_delta;
+drop table NEWR_REPOSB.PART_BALANCE_quarterly;
+drop table NEWR_REPOSB.PART_BALANCE_quarterly_delta;
 
 -- participant_balance
 CREATE TABLE NEWR_REPOSB.PARTICIPANT_BALANCE 
