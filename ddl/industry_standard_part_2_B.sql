@@ -1672,10 +1672,10 @@ GRANT INSERT, UPDATE, DELETE ON NEWR_REPOSB.participant_status_trend_delta TO ro
 
 
 
- grant  SELECT on NEWR_REPOSB.PLAN to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.txn to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.PARTICIPANT_STATUS_TREND to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.TRANSACTION_TREND to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.participant to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.participant_core_balance to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOSB.participant_core_balance_monthly to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.PLAN to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.txn to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.PARTICIPANT_STATUS_TREND to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.TRANSACTION_TREND to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.participant to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.participant_core_balance to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOSB.participant_core_balance_monthly to WEALTH_CENTRAL with  grant  option;

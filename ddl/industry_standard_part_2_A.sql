@@ -1669,10 +1669,10 @@ TABLESPACE NEWR_REPOS_DATA
 GRANT SELECT ON NEWR_REPOS.participant_status_trend_delta TO role_newr_repos_read;
 GRANT INSERT, UPDATE, DELETE ON NEWR_REPOS.participant_status_trend_delta TO role_newr_repos_write;
 
- grant  SELECT on NEWR_REPOS.PLAN to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.txn to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.PARTICIPANT_STATUS_TREND to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.TRANSACTION_TREND to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.participant to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.participant_core_balance to WEALTH_CENTRAL with  grant  option;
- grant  SELECT on NEWR_REPOS.participant_core_balance_monthly to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.PLAN to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.txn to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.PARTICIPANT_STATUS_TREND to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.TRANSACTION_TREND to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.participant to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.participant_core_balance to WEALTH_CENTRAL with  grant  option;
+grant  SELECT on NEWR_REPOS.participant_core_balance_monthly to WEALTH_CENTRAL with  grant  option;
