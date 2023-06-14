@@ -16,11 +16,11 @@ def identify_invalid_plan_number(df):
                            when((col(plan_column_name).between(invalid_plan_id_lb, invalid_plan_id_ub)) |
                                 ((col("client_id") == "NG") & (col(plan_column_name).isin('999999', '999998', '999997'))),
                                 coalesce(lit(True), col("to_drop")))
-                           .otherwise(col("to_drop"))) \
+                           .otherwise(lit(False))) \
                .withColumn("drop_record_remarks",
                            when((col(plan_column_name).between(invalid_plan_id_lb, invalid_plan_id_ub)) |
                                 ((col("client_id") == "NG") & (col(plan_column_name).isin('999999', '999998', '999997'))),
                                 coalesce(lit("invalid plan id"), col("drop_record_remarks")))
-                           .otherwise(col("drop_record_remarks")))
+                           .otherwise(lit("valid")))
 
     return df
