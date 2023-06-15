@@ -77,3 +77,11 @@ def handle_amounts(df, column_name, precision, scale):
                        )
 
     return df
+
+
+
+SELECT tablespace_name, bytes, bytes - (nvl(f.bytes, 0) + nvl(u.bytes, 0)) AS free_bytes
+FROM dba_tablespaces t
+LEFT JOIN (SELECT tablespace_name, SUM(bytes) AS bytes FROM dba_data_files GROUP BY tablespace_name) f ON t.tablespace_name = f.tablespace_name
+LEFT JOIN (SELECT tablespace_name, SUM(bytes) AS bytes FROM dba_undo_extents GROUP BY tablespace_name) u ON t.tablespace_name = u.tablespace_name
+WHERE t.tablespace_name = 'UNDOTBS2';
