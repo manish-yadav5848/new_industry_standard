@@ -85,3 +85,31 @@ FROM dba_tablespaces t
 LEFT JOIN (SELECT tablespace_name, SUM(bytes) AS bytes FROM dba_data_files GROUP BY tablespace_name) f ON t.tablespace_name = f.tablespace_name
 LEFT JOIN (SELECT tablespace_name, SUM(bytes) AS bytes FROM dba_undo_extents GROUP BY tablespace_name) u ON t.tablespace_name = u.tablespace_name
 WHERE t.tablespace_name = 'UNDOTBS2';
+
+
+SELECT t1.plan_number, t1.participant_id, t1.trade_date, t1.run_date, t1.run_time, t1.sequence_number, t1.base_transaction_code, t1.activity_type, t1.rev_code, t1.posting_process_counter
+FROM t1
+JOIN t2 ON t1.plan_number = t2.plan_number
+    AND t1.participant_id = t2.participant_id
+    AND t1.trade_date = t2.trade_date
+    AND t1.run_date = t2.run_date
+    AND t1.run_time = t2.run_time
+    AND t1.sequence_number = t2.sequence_number
+    AND t1.base_transaction_code = t2.base_transaction_code
+    AND t1.activity_type = t2.activity_type
+    AND t1.rev_code = t2.rev_code
+    AND t1.posting_process_counter = t2.posting_process_counter;
+
+SELECT t2.plan_number, t2.participant_id, t2.trade_date, t2.run_date, t2.run_time, t2.sequence_number, t2.base_transaction_code, t2.activity_type, t2.rev_code, t2.posting_process_counter
+FROM t2
+LEFT JOIN t1 ON t1.plan_number = t2.plan_number
+    AND t1.participant_id = t2.participant_id
+    AND t1.trade_date = t2.trade_date
+    AND t1.run_date = t2.run_date
+    AND t1.run_time = t2.run_time
+    AND t1.sequence_number = t2.sequence_number
+    AND t1.base_transaction_code = t2.base_transaction_code
+    AND t1.activity_type = t2.activity_type
+    AND t1.rev_code = t2.rev_code
+    AND t1.posting_process_counter = t2.posting_process_counter
+WHERE t1.plan_number IS NULL;
