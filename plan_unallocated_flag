@@ -1,0 +1,3 @@
+select case when cardinality(account_type_code)=1 and account_type_code[0]='ALLOC' then 'N' else 'Y' end as PLAN_UNALLOCATED_FLAG ,div_sub_id,plan_number from  
+(select collect_set(account_type_code) as account_type_code,div_sub_id,plan_number from 
+(select  case when upper(trim(sp.participant_account_type_code)) in ('ALLOC','ALOC') then 'ALLOC' else sp.participant_account_type_code end  as account_type_code, op.div_sub_id,op.plan_number from super_omni_newr_particpantaccount_daily_jb_dat sp right join exn_xxewre01_xxewrptd_jb op on op.part_number=sp.participant_id and op.plan_number=sp.plan_number where op.div_sub_id is not null or op.div_sub_id<> '' ) group by div_sub_id,plan_number )
